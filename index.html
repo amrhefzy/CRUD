@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Daniels</title>
+    <title>CRUD</title>
     <link rel="icon" type="image/png" href="./imgs/imgs/favicon.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,20 +25,74 @@
 </head>
 <body>
     <div class="container">
-        <div class="card">
-            <div class="card-header text-center ">
-                <h1>Quote of the Day</h1>
+        
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputproductName1" class="form-label">product Name :</label>
+                <input type="text" class="form-control " id="exampleInputproductName1" aria-describedby="productNameHelp">
+                <div id="productNameHelp" class="form-text">ex..samsung</div>
+                <div class="alert alert-danger d-none " id="productName">
+                    <ul>
+                        <li>product name must be 3 char </li>
+                        <li>product name must less than 20 char</li>
+                    </ul>
+                </div>
             </div>
-            <div class="card-body text-center">
-                <h5 class="card-title">Press the button below to recieve a random quote!</h5>
-                <button onclick="qoute()" class="btn btn-primary" id="rbtn">New quote</button>
+            <div class="mb-3">
+                <label for="exampleInputproductPrice1" class="form-label">product price :</label>
+                <input type="text" class="form-control" id="exampleInputproductPrice1" aria-describedby="productPriceHelp">
+                <div id="productPriceHelp" class="form-text">ex..25000</div>
+                <div class="alert alert-danger d-none  " id="productPrice">
+                    <ul>
+                        <li>product price must number only </li>
+                    </ul>
+                </div>
             </div>
-        </div>
             
-        <div class="result text-center py-5" id="result">
-
-        </div>
-            
+            <div class="mb-3">
+                <label for="exampleInputproductCategory1" class="form-label">product category :</label>
+                <input type="text" class="form-control" id="exampleInputproductCategory1" aria-describedby="productCategoryHelp">
+                <div id="productCategoryHelp" class="form-text">ex..samsung</div>
+                <div class="alert alert-danger d-none" id="productCategory">
+                    <ul>
+                        <li>product category must be 3 char </li>
+                        <li>product category must less than 20 char</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputproductDES1" class="form-label">product DES :</label>
+                <input type="text" class="form-control" id="exampleInputproductDES1" aria-describedby="productDESHelp">
+                <div id="productDESHelp" class="form-text ">ex..samsung</div>
+                <div class="alert alert-danger d-none" id="productDec">
+                    <ul>
+                        <li>product price must number only </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+        <button onclick="addUpdateProduct()" class="btn btn-primary" id="addBtn">Add product</button>
+    </div>
+    <div class="container search-bar w-25">
+        <input onkeyup="search()" type="text" class="form-control" id="searchBar" placeholder="Search.....">
+    </div>
+    <div class="container py-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">index</th>
+                    <th scope="col">Product name</th>
+                    <th scope="col">Product price</th>
+                    <th scope="col">product category</th>
+                    <th scope="col">Product DESC</th>
+                    <th scope="col">update</th>
+                    <th scope="col">delete</th>
+                </tr>
+            </thead> 
+            <tbody id="Tbody">
+                
+            </tbody>
+        </table>
     </div>
     <script src="./js/bootstrap.bundle.js"></script>
     <script src="./js/main.js"></script>
